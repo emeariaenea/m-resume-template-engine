@@ -1,0 +1,5 @@
+*.stackdump
+
+out/
+build/
+.gradle/
