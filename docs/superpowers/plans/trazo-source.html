@@ -108,7 +108,7 @@ body{
   --panel-accent:var(--l-panel-accent);
   --shadow:0 1px 2px rgba(16,20,22,.06), 0 12px 32px rgba(16,20,22,.10);
   --pad-y:15mm; --pad-x:16mm;
-  --sheet-w:210mm; --sheet-h:297mm;
+  --sheet-w:215.9mm; --sheet-h:279.4mm;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]) body{
@@ -142,7 +142,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-.picker{max-width:210mm;margin:0 auto 20px;}
+.picker{max-width:215.9mm;margin:0 auto 20px;}
 .picker-head{
   display:flex;justify-content:space-between;align-items:baseline;
   gap:12px;flex-wrap:wrap;margin-bottom:10px;
@@ -186,7 +186,7 @@ body{
 }
 
 /* ==================================================================
-   HOJA A4 — identica para las 4
+   HOJA CARTA — identica para las 4
    ================================================================== */
 .sheet{
   background:var(--paper);
@@ -261,9 +261,11 @@ body[data-variant="trazo"] .section:has(li) .entry::before{
   content:"";position:absolute;left:2.5pt;top:5pt;
   width:1px;height:calc(100% + 5pt);background:var(--rule);
 }
-body[data-variant="trazo"] .section:has(li) .entry:last-child::before{height:10pt;}
+/* El raíl termina en el último nodo: sin sobrante bajo él. */
+body[data-variant="trazo"] .section:has(li) .entry:last-child::before{display:none;}
 body[data-variant="trazo"] .section:has(li) .entry::after{
-  content:"";position:absolute;left:0;top:2.4pt;
+  /* Nodo centrado sobre el raíl: centro raíl (2.5pt + .5px) − radio (3pt + 1.4pt borde). */
+  content:"";position:absolute;left:calc(2.5pt + .5px - 4.4pt);top:2.4pt;
   width:6pt;height:6pt;border-radius:50%;
   background:var(--paper);border:1.4pt solid var(--accent);
   print-color-adjust:exact;-webkit-print-color-adjust:exact;
@@ -342,8 +344,8 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
    ================================================================== */
 @media screen and (max-width:230mm){
   body{--pad-y:9mm; --pad-x:8mm;}
-  .sheet{width:100%;max-width:210mm;min-height:0;}
-  .picker{max-width:210mm;}
+  .sheet{width:100%;max-width:215.9mm;min-height:0;}
+  .picker{max-width:215.9mm;}
   .entry-head{flex-direction:column;align-items:flex-start;gap:0;}
   body[data-variant="margen"] .section{grid-template-columns:1fr;}
   body[data-variant="margen"] .section > h2{grid-column:1;text-align:left;}
@@ -352,9 +354,9 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
 }
 
 /* ==================================================================
-   IMPRESION — A4, variante activa
+   IMPRESION — CARTA, variante activa
    ================================================================== */
-@page{size:A4;margin:0;}
+@page{size:letter;margin:0;}
 @media print{
   body{
     --paper:var(--l-paper); --ink:var(--l-ink);   --body:var(--l-body);
@@ -402,6 +404,7 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
         <h3 class="entry-title">Ingeniero de Software <span class="org">— Xetux Soluciones</span></h3>
         <span class="entry-when">feb. 2025 – Presente</span>
       </div>
+      <p class="entry-where">Caracas, Venezuela</p>
       <ul>
         <li>Diseño y desarrollo de arquitecturas ágiles de microservicios con el ecosistema Java y Spring Boot, aplicando principios SOLID y patrones de diseño para garantizar escalabilidad, mantenibilidad y robustez del backend.</li>
         <li>Implementación de una arquitectura de microservicios que mejoró la modularidad y el tiempo de respuesta de los sistemas críticos de la empresa.</li>
@@ -434,18 +437,6 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
         <li>Implementación de diseño responsivo y refactorización de código, mejorando la escalabilidad del front-end para soportar mayor tráfico de usuarios.</li>
       </ul>
     </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3 class="entry-title">Ingeniero de Software Júnior <span class="org">— Apps2Go TECH</span></h3>
-        <span class="entry-when">nov. 2022 – ago. 2023</span>
-      </div>
-      <p class="entry-where">Miami, Florida, Estados Unidos</p>
-      <ul>
-        <li>Implementación y mantenimiento de funcionalidades con Python, Node.js y Flutter, y diseño de interfaces de usuario en Figma.</li>
-        <li>Optimización del rendimiento de funciones críticas y colaboración con equipos multifuncionales en la entrega de actualizaciones de software.</li>
-      </ul>
-    </div>
   </section>
 
   <section class="section">
@@ -466,6 +457,12 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
     <h2>Educación</h2>
     <div class="entry">
       <div class="entry-head">
+        <h3 class="entry-title">Maestría en Ingeniería de Software y Sistemas de la Información <span class="org">— TECH Universidad</span></h3>
+        <span class="entry-when">mar. 2025 – nov. 2026 (en curso)</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
         <h3 class="entry-title">Grado en Ingeniería, Computer Science <span class="org">— Universidad «Alejandro de Humboldt»</span></h3>
         <span class="entry-when">sept. 2019 – abr. 2023</span>
       </div>
@@ -476,6 +473,13 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
     <h2>Certificaciones</h2>
     <p class="certs">
       <span>DevOps: Despliegue de microservicios con Docker</span><span>Test Automation Foundations</span><span>Secure Coding in React</span><span>User Experience for Web Design</span><span>Fundamentos de la programación: Seguridad web</span>
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Idiomas</h2>
+    <p class="certs">
+      <span>Español — Nativo</span><span>Inglés — C1 (Avanzado)</span>
     </p>
   </section>
 

@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CV Mariana Pacheco — Serie Técnica (EN)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;600&display=swap">
+
+<style>
+/* ==================================================================
+   SERIE TECNICA — 4 descendientes creativas de la plantilla Tecnica.
+   Mismo HTML que las sobrias. El riesgo va en tipografia, color y
+   recursos CSS; nunca en la estructura ni en el orden de lectura.
+   ================================================================== */
+
+/* ---- 1. TRAZO — linea de tiempo con nodos --------------------- */
+body[data-variant="trazo"]{
+  --l-paper:#FCFDFC; --l-ink:#101614; --l-body:#343A38; --l-muted:#6B7370;
+  --l-rule:#D6DDD9;  --l-accent:#0B7A54; --l-ground:#E4EAE7;
+  --l-panel:#101614;  --l-panel-ink:#F1F5F3; --l-panel-accent:#7FD3AE;
+  --d-paper:#111614; --d-ink:#EDF3F0; --d-body:#BFC8C4; --d-muted:#7F8985;
+  --d-rule:#242D2A;  --d-accent:#6FC3A2; --d-ground:#080B0A;
+  --d-panel:#050807;  --d-panel-ink:#EDF3F0; --d-panel-accent:#7FD3AE;
+
+  --f-display:"IBM Plex Sans", system-ui, "Segoe UI", sans-serif;
+  --f-body:"IBM Plex Sans", system-ui, "Segoe UI", sans-serif;
+  --f-label:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --f-when:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  --t-name:24pt; --t-role:9.8pt; --t-label:7.6pt; --t-entry:10.1pt;
+  --t-base:9.1pt; --t-meta:8pt; --lh:1.30;
+  --name-weight:600; --name-track:-.022em;
+  --label-weight:500; --label-track:.16em; --label-case:uppercase;
+  --gap-section:9pt;
+}
+
+/* ---- 2. FICHA — hoja de datos de componente ------------------- */
+body[data-variant="ficha"]{
+  --l-paper:#FDFDFC; --l-ink:#16181A; --l-body:#3A3D40; --l-muted:#6E7276;
+  --l-rule:#DEDCD8;  --l-accent:#782E38; --l-ground:#E8E6E2;
+  --l-panel:#16181A;  --l-panel-ink:#F6F5F3; --l-panel-accent:#D98A94;
+  --d-paper:#17181A; --d-ink:#F2F3F4; --d-body:#C3C6C9; --d-muted:#83878B;
+  --d-rule:#2B2D30;  --d-accent:#E09AA3; --d-ground:#0B0C0D;
+  --d-panel:#0B0C0D;  --d-panel-ink:#F2F3F4; --d-panel-accent:#E09AA3;
+
+  --f-display:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --f-body:"IBM Plex Sans", system-ui, "Segoe UI", sans-serif;
+  --f-label:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --f-when:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  --t-name:20pt; --t-role:9.6pt; --t-label:7.4pt; --t-entry:10pt;
+  --t-base:9pt; --t-meta:7.9pt; --lh:1.30;
+  --name-weight:600; --name-track:-.045em;
+  --label-weight:500; --label-track:.2em; --label-case:uppercase;
+  --gap-section:9pt;
+}
+
+/* ---- 3. CONTRASTE — cabecera en panel de tinta ---------------- */
+body[data-variant="contraste"]{
+  --l-paper:#FFFFFF; --l-ink:#0F1315; --l-body:#34393B; --l-muted:#6C7376;
+  --l-rule:#DCE0E1;  --l-accent:#14705A; --l-ground:#DDE3E2;
+  --l-panel:#0F1315;  --l-panel-ink:#F4F6F5; --l-panel-accent:#79D0A8;
+  --d-paper:#141819; --d-ink:#F1F4F4; --d-body:#C2C8C9; --d-muted:#828A8C;
+  --d-rule:#272C2E;  --d-accent:#79D0A8; --d-ground:#080A0B;
+  --d-panel:#050708;  --d-panel-ink:#F4F6F5; --d-panel-accent:#79D0A8;
+
+  --f-display:"IBM Plex Sans", system-ui, "Segoe UI", sans-serif;
+  --f-body:"IBM Plex Sans", system-ui, "Segoe UI", sans-serif;
+  --f-label:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --f-when:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  --t-name:26pt; --t-role:9.8pt; --t-label:7.4pt; --t-entry:10.1pt;
+  --t-base:9.1pt; --t-meta:8pt; --lh:1.30;
+  --name-weight:700; --name-track:-.03em;
+  --label-weight:500; --label-track:.18em; --label-case:uppercase;
+  --gap-section:8.5pt;
+}
+
+/* ---- 4. MARGEN — rejilla asimetrica --------------------------- */
+body[data-variant="margen"]{
+  --l-paper:#FDFDFE; --l-ink:#101012; --l-body:#35363B; --l-muted:#83848A;
+  --l-rule:#E3E3E7;  --l-accent:#3E3A6B; --l-ground:#E5E5EA;
+  --l-panel:#101012;  --l-panel-ink:#F4F4F7; --l-panel-accent:#A9A3E0;
+  --d-paper:#131316; --d-ink:#F2F2F5; --d-body:#C2C3C9; --d-muted:#83848A;
+  --d-rule:#28282E;  --d-accent:#A9A3E0; --d-ground:#08080A;
+  --d-panel:#08080A;  --d-panel-ink:#F2F2F5; --d-panel-accent:#A9A3E0;
+
+  --f-display:"IBM Plex Sans", system-ui, "Segoe UI", sans-serif;
+  --f-body:"IBM Plex Serif", Georgia, serif;
+  --f-label:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --f-when:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  --t-name:23pt; --t-role:9.6pt; --t-label:7.2pt; --t-entry:9.9pt;
+  --t-base:8.9pt; --t-meta:7.8pt; --lh:1.34;
+  --name-weight:600; --name-track:-.025em;
+  --label-weight:500; --label-track:.14em; --label-case:uppercase;
+  --gap-section:9pt;
+}
+
+/* ---- Mapeo claro / oscuro (uno solo para las 4) --------------- */
+body{
+  --paper:var(--l-paper); --ink:var(--l-ink);   --body:var(--l-body);
+  --muted:var(--l-muted); --rule:var(--l-rule); --accent:var(--l-accent);
+  --ground:var(--l-ground);
+  --panel:var(--l-panel); --panel-ink:var(--l-panel-ink);
+  --panel-accent:var(--l-panel-accent);
+  --shadow:0 1px 2px rgba(16,20,22,.06), 0 12px 32px rgba(16,20,22,.10);
+  --pad-y:15mm; --pad-x:16mm;
+  --sheet-w:215.9mm; --sheet-h:279.4mm;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) body{
+    --paper:var(--d-paper); --ink:var(--d-ink);   --body:var(--d-body);
+    --muted:var(--d-muted); --rule:var(--d-rule); --accent:var(--d-accent);
+    --ground:var(--d-ground);
+    --panel:var(--d-panel); --panel-ink:var(--d-panel-ink);
+    --panel-accent:var(--d-panel-accent);
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 12px 32px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"] body{
+  --paper:var(--d-paper); --ink:var(--d-ink);   --body:var(--d-body);
+  --muted:var(--d-muted); --rule:var(--d-rule); --accent:var(--d-accent);
+  --ground:var(--d-ground);
+  --panel:var(--d-panel); --panel-ink:var(--d-panel-ink);
+  --panel-accent:var(--d-panel-accent);
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 12px 32px rgba(0,0,0,.45);
+}
+
+/* ==================================================================
+   BASE
+   ================================================================== */
+*{box-sizing:border-box;}
+body{
+  background:var(--ground);
+  color:var(--body);
+  font-family:var(--f-body);
+  margin:0;
+  padding:26px 16px 56px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.picker{max-width:215.9mm;margin:0 auto 20px;}
+.picker-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:10px;
+}
+.picker-head h2{
+  font-family:"IBM Plex Sans", system-ui, sans-serif;
+  font-size:12px;font-weight:600;margin:0;color:var(--ink);letter-spacing:.02em;
+}
+.picker-head p{
+  margin:0;font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;color:var(--muted);letter-spacing:.02em;
+}
+.tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;}
+.tab{
+  display:flex;flex-direction:column;gap:3px;text-align:left;
+  font-family:"IBM Plex Sans", system-ui, sans-serif;font-size:12px;color:var(--body);
+  background:var(--paper);border:1px solid var(--rule);border-radius:4px;
+  padding:10px 11px;cursor:pointer;
+  transition:border-color .15s ease, color .15s ease;
+}
+.tab:hover{border-color:var(--muted);}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.tab[aria-pressed="true"]{border-color:var(--ink);}
+.tab .tn{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;
+  color:var(--ink);text-transform:uppercase;letter-spacing:.14em;
+}
+.tab .td{font-size:11px;line-height:1.4;color:var(--muted);}
+
+.note{
+  margin:14px 0 0;padding:11px 13px;
+  border:1px solid var(--rule);border-left:2px solid var(--accent);border-radius:4px;
+  font-family:"IBM Plex Sans", system-ui, sans-serif;
+  font-size:11.5px;line-height:1.55;color:var(--muted);max-width:78ch;
+}
+.note em{font-style:italic;}
+.note kbd{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  color:var(--ink);background:var(--ground);
+  border:1px solid var(--rule);border-radius:3px;padding:1px 4px;
+}
+
+/* ==================================================================
+   HOJA CARTA — identica para las 4
+   ================================================================== */
+.sheet{
+  background:var(--paper);
+  width:var(--sheet-w);min-height:var(--sheet-h);
+  margin:0 auto;
+  padding:var(--pad-y) var(--pad-x) calc(var(--pad-y) - 2mm);
+  box-shadow:var(--shadow);
+  font-size:var(--t-base);line-height:var(--lh);
+  display:flex;flex-direction:column;gap:var(--gap-section);
+}
+
+.name{
+  font-family:var(--f-display);font-weight:var(--name-weight);
+  font-size:var(--t-name);line-height:1.04;letter-spacing:var(--name-track);
+  color:var(--ink);margin:0;text-wrap:balance;
+}
+.headline{
+  font-size:var(--t-role);font-weight:500;color:var(--accent);
+  margin:4pt 0 0;letter-spacing:.005em;
+}
+.contact{
+  margin:5pt 0 0;font-family:var(--f-label);
+  font-size:var(--t-meta);color:var(--muted);
+  display:flex;flex-wrap:wrap;gap:0 7pt;
+}
+.contact span:not(:last-child)::after{content:" ·";color:var(--rule);}
+.contact a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);}
+.contact a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+.section{display:flex;flex-direction:column;gap:5pt;}
+.section > h2{
+  font-family:var(--f-label);font-weight:var(--label-weight);
+  font-size:var(--t-label);letter-spacing:var(--label-track);
+  text-transform:var(--label-case);
+  color:var(--accent);margin:0;
+  border-top:1px solid var(--rule);padding:4pt 0 0;
+}
+.summary{margin:0;max-width:63em;}
+
+.entry{display:flex;flex-direction:column;gap:2.5pt;break-inside:avoid;}
+.entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:10pt;}
+.entry-title{margin:0;font-size:var(--t-entry);font-weight:600;color:var(--ink);}
+.entry-title .org{font-weight:400;color:var(--body);}
+.entry-when{
+  font-family:var(--f-when);font-size:var(--t-meta);color:var(--muted);
+  white-space:nowrap;font-variant-numeric:tabular-nums;
+}
+.entry-where{font-size:var(--t-meta);color:var(--muted);margin:0;}
+.entry ul{margin:1pt 0 0;padding-left:12pt;display:flex;flex-direction:column;gap:1.4pt;}
+.entry li{margin:0;}
+.entry li::marker{color:var(--accent);}
+
+.rows{display:grid;grid-template-columns:max-content 1fr;gap:2.4pt 12pt;margin:0;}
+.rows dt{
+  font-family:var(--f-label);font-size:7.9pt;font-weight:500;
+  color:var(--accent);text-transform:uppercase;letter-spacing:.06em;
+}
+.rows dd{margin:0;}
+
+.certs{margin:0;color:var(--body);}
+.certs span:not(:last-child)::after{content:" · ";color:var(--rule);}
+
+/* ==================================================================
+   TRAZO — raíl vertical con nodos en Experiencia.
+   :has(li) selecciona solo la sección de Experiencia; Educación no
+   tiene lista, Competencias usa <dl>, Certificaciones es un <p>.
+   ================================================================== */
+body[data-variant="trazo"] .section:has(li) .entry{
+  position:relative;padding-left:15pt;
+}
+body[data-variant="trazo"] .section:has(li) .entry::before{
+  content:"";position:absolute;left:2.5pt;top:5pt;
+  width:1px;height:calc(100% + 5pt);background:var(--rule);
+}
+/* El raíl termina en el último nodo: sin sobrante bajo él. */
+body[data-variant="trazo"] .section:has(li) .entry:last-child::before{display:none;}
+body[data-variant="trazo"] .section:has(li) .entry::after{
+  /* Nodo centrado sobre el raíl: centro raíl (2.5pt + .5px) − radio (3pt + 1.4pt borde). */
+  content:"";position:absolute;left:calc(2.5pt + .5px - 4.4pt);top:2.4pt;
+  width:6pt;height:6pt;border-radius:50%;
+  background:var(--paper);border:1.4pt solid var(--accent);
+  print-color-adjust:exact;-webkit-print-color-adjust:exact;
+}
+body[data-variant="trazo"] .section:has(li){gap:6pt;}
+body[data-variant="trazo"] .entry ul{padding-left:11pt;}
+
+/* ==================================================================
+   FICHA — etiqueta + filete hasta el borde, nombre monoespaciado
+   ================================================================== */
+body[data-variant="ficha"] .section > h2{
+  border-top:0;padding:0;
+  display:flex;align-items:center;gap:8pt;
+}
+body[data-variant="ficha"] .section > h2::after{
+  content:"";flex:1 1 auto;height:1px;background:var(--rule);
+}
+body[data-variant="ficha"] .name{text-transform:uppercase;}
+body[data-variant="ficha"] .headline{
+  font-family:var(--f-label);font-size:8.4pt;font-weight:400;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+body[data-variant="ficha"] .rows{
+  grid-template-columns:28mm 1fr;gap:3pt 8pt;
+  border-top:1px solid var(--rule);padding-top:3pt;
+}
+body[data-variant="ficha"] .rows dt{font-size:7.1pt;letter-spacing:.05em;padding-right:5pt;}
+body[data-variant="ficha"] .entry-title{letter-spacing:-.005em;}
+
+/* ==================================================================
+   CONTRASTE — cabecera como panel de tinta a sangre
+   ================================================================== */
+body[data-variant="contraste"] .sheet > header{
+  background:var(--panel);color:var(--panel-ink);
+  margin:calc(-1 * var(--pad-y)) calc(-1 * var(--pad-x)) 0;
+  padding:calc(var(--pad-y) - 3mm) var(--pad-x) 7mm;
+  print-color-adjust:exact;-webkit-print-color-adjust:exact;
+}
+body[data-variant="contraste"] .sheet > header .name{color:var(--panel-ink);}
+body[data-variant="contraste"] .sheet > header .headline{color:var(--panel-accent);}
+body[data-variant="contraste"] .sheet > header .contact{color:var(--panel-ink);opacity:.72;}
+body[data-variant="contraste"] .sheet > header .contact span:not(:last-child)::after,
+body[data-variant="contraste"] .sheet > header .contact a{border-color:currentColor;color:inherit;}
+body[data-variant="contraste"] .section > h2{
+  border-top:0;padding:0;color:var(--ink);
+  display:flex;align-items:baseline;gap:7pt;
+}
+body[data-variant="contraste"] .section > h2::before{
+  content:"";width:9pt;height:2pt;background:var(--accent);
+  print-color-adjust:exact;-webkit-print-color-adjust:exact;
+}
+body[data-variant="contraste"] .sheet{gap:9pt;}
+
+/* ==================================================================
+   MARGEN — rejilla asimétrica: etiqueta a la izquierda, contenido
+   a la derecha. El orden del DOM no cambia.
+   ================================================================== */
+body[data-variant="margen"] .section{
+  display:grid;grid-template-columns:29mm 1fr;gap:5pt 8pt;align-items:start;
+}
+body[data-variant="margen"] .section > h2{
+  grid-column:1;border-top:0;padding:1.5pt 5pt 0 0;text-align:right;
+  font-size:6.9pt;letter-spacing:.06em;color:var(--muted);
+}
+body[data-variant="margen"] .section > :not(h2){grid-column:2;}
+body[data-variant="margen"] .sheet > header{
+  padding-left:calc(29mm + 8pt);
+  border-bottom:1px solid var(--rule);padding-bottom:7pt;
+}
+body[data-variant="margen"] .entry-title{font-family:var(--f-display);}
+body[data-variant="margen"] .rows dt{font-family:var(--f-label);}
+body[data-variant="margen"] .entry li::marker{color:var(--muted);}
+
+/* ==================================================================
+   PANTALLA ESTRECHA
+   ================================================================== */
+@media screen and (max-width:230mm){
+  body{--pad-y:9mm; --pad-x:8mm;}
+  .sheet{width:100%;max-width:215.9mm;min-height:0;}
+  .picker{max-width:215.9mm;}
+  .entry-head{flex-direction:column;align-items:flex-start;gap:0;}
+  body[data-variant="margen"] .section{grid-template-columns:1fr;}
+  body[data-variant="margen"] .section > h2{grid-column:1;text-align:left;}
+  body[data-variant="margen"] .section > :not(h2){grid-column:1;}
+  body[data-variant="margen"] .sheet > header{padding-left:0;}
+}
+
+/* ==================================================================
+   IMPRESION — CARTA, variante activa
+   ================================================================== */
+@page{size:letter;margin:0;}
+@media print{
+  body{
+    --paper:var(--l-paper); --ink:var(--l-ink);   --body:var(--l-body);
+    --muted:var(--l-muted); --rule:var(--l-rule); --accent:var(--l-accent);
+    --ground:#FFFFFF;
+    --panel:var(--l-panel); --panel-ink:var(--l-panel-ink);
+    --panel-accent:var(--l-panel-accent);
+    --shadow:none;
+    --pad-y:11mm; --pad-x:13mm;
+    background:#FFFFFF;padding:0;
+    print-color-adjust:exact;-webkit-print-color-adjust:exact;
+  }
+  .picker{display:none;}
+  .sheet{width:auto;min-height:0;margin:0;box-shadow:none;}
+  a{text-decoration:none;border-bottom:0;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;}}
+</style>
+</head>
+<body data-variant="trazo">
+<!-- ===== HOJA: este bloque es idéntico al de la serie sobria ===== -->
+<article class="sheet">
+
+  <header>
+    <h1 class="name">Mariana Pacheco</h1>
+    <p class="headline">Computer Engineer — Backend Development &amp; Software Architecture</p>
+    <p class="contact">
+      <span><a href="mailto:emeariaenea@gmail.com">emeariaenea@gmail.com</a></span>
+      <span><a href="tel:+584242216100">+58 424 221 6100</a></span>
+      <span>Venezuela</span>
+      <span><a href="https://www.linkedin.com/in/emeariaenea">linkedin.com/in/emeariaenea</a></span>
+    </p>
+  </header>
+
+  <section class="section">
+    <h2>Summary</h2>
+    <p class="summary">Computer Engineer with experience developing innovative software solutions that improve business productivity. Specialized in microservices architectures with Java and Spring Boot. Hands-on, capable leader who coordinates multidisciplinary teams in fast-paced environments to deliver projects on time and successfully.</p>
+  </section>
+
+  <section class="section">
+    <h2>Professional Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">Software Engineer <span class="org">— Xetux Soluciones</span></h3>
+        <span class="entry-when">Feb 2025 – Present</span>
+      </div>
+      <p class="entry-where">Caracas, Venezuela</p>
+      <ul>
+        <li>Designed and developed agile microservices architectures with the Java and Spring Boot ecosystem, applying SOLID principles and design patterns to ensure backend scalability, maintainability, and robustness.</li>
+        <li>Implemented a microservices architecture that improved the modularity and response time of the company's critical systems.</li>
+        <li>Administered and configured servers for production deployments, reducing operating costs and downtime.</li>
+        <li>Provided technical leadership to development teams under agile methodologies and standardized engineering processes, raising the team's code quality.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">IT Solutions Architect <span class="org">— Banco Exterior</span></h3>
+        <span class="entry-when">Mar 2024 – Feb 2025</span>
+      </div>
+      <p class="entry-where">Caracas, Venezuela</p>
+      <ul>
+        <li>Designed software architectures for enterprise solutions and assessed the feasibility, impact, and technical viability of changes to existing systems.</li>
+        <li>Ran proofs of concept and volumetric stress-test analyses to detect performance issues before production.</li>
+        <li>Automated processes with RPA tools and evaluated and selected technologies for each project.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">Junior Software Engineer <span class="org">— Keep Typing C.A.</span></h3>
+        <span class="entry-when">Aug 2023 – Feb 2024</span>
+      </div>
+      <p class="entry-where">Caracas, Venezuela</p>
+      <ul>
+        <li>Developed front-end components with TypeScript, Vue, and Vuetify, ensuring an efficient and visually appealing interface.</li>
+        <li>Implemented responsive design and refactored code, improving front-end scalability to support higher user traffic.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Technical Skills</h2>
+    <dl class="rows">
+      <dt>Backend</dt>
+      <dd>Java, Spring Boot, Kotlin, Node.js, Python, microservices, REST API, Swagger / OpenAPI, SOLID, design patterns</dd>
+      <dt>Front-end &amp; Mobile</dt>
+      <dd>TypeScript, Vue, Vuetify, React, Flutter, Android development</dd>
+      <dt>Infrastructure</dt>
+      <dd>Docker, DevOps, server administration, test automation, RPA</dd>
+      <dt>Product</dt>
+      <dd>Agile methodologies, technical leadership, UX/UI, Figma</dd>
+    </dl>
+  </section>
+
+  <section class="section">
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">Master's Degree in Software Engineering and Information Systems <span class="org">— TECH Universidad</span></h3>
+        <span class="entry-when">Mar 2025 – Nov 2026 (in progress)</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">Bachelor's Degree in Computer Engineering <span class="org">— Universidad «Alejandro de Humboldt»</span></h3>
+        <span class="entry-when">Sep 2019 – Apr 2023</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Certifications</h2>
+    <p class="certs">
+      <span>DevOps: Deploying Microservices with Docker</span><span>Test Automation Foundations</span><span>Secure Coding in React</span><span>User Experience for Web Design</span><span>Programming Foundations: Web Security</span>
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Languages</h2>
+    <p class="certs">
+      <span>Spanish — Native</span><span>English — C1 (Advanced)</span>
+    </p>
+  </section>
+
+</article>
+</body>
+</html>
