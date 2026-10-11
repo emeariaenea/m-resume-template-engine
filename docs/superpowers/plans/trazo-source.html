@@ -235,6 +235,9 @@ body{
   white-space:nowrap;font-variant-numeric:tabular-nums;
 }
 .entry-where{font-size:var(--t-meta);color:var(--muted);margin:0;}
+/* Educación: fecha en la misma línea del título (no en columna aparte),
+   para que el ATS la asocie al grado correcto. */
+.entry-title .entry-when{font-weight:400;}
 .entry ul{margin:1pt 0 0;padding-left:12pt;display:flex;flex-direction:column;gap:1.4pt;}
 .entry li{margin:0;}
 .entry li::marker{color:var(--accent);}
@@ -245,6 +248,15 @@ body{
   color:var(--accent);text-transform:uppercase;letter-spacing:.06em;
 }
 .rows dd{margin:0;}
+
+/* Competencias en una línea por categoría: sin columnas, para que el ATS
+   lea cada etiqueta junto a sus valores. */
+.skills{display:flex;flex-direction:column;gap:2.4pt;}
+.skills p{margin:0;}
+.skills .skill-label{
+  font-family:var(--f-label);font-size:7.9pt;font-weight:500;
+  color:var(--accent);text-transform:uppercase;letter-spacing:.06em;
+}
 
 .certs{margin:0;color:var(--body);}
 .certs span:not(:last-child)::after{content:" · ";color:var(--rule);}
@@ -382,7 +394,7 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
 
   <header>
     <h1 class="name">Mariana Pacheco</h1>
-    <p class="headline">Ingeniero en Informática — Desarrollo Backend y Arquitectura de Software</p>
+    <p class="headline">Ingeniera en Informática — Desarrollo Backend y Arquitectura de Software</p>
     <p class="contact">
       <span><a href="mailto:emeariaenea@gmail.com">emeariaenea@gmail.com</a></span>
       <span><a href="tel:+584242216100">+58 424 221 6100</a></span>
@@ -393,7 +405,7 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
 
   <section class="section">
     <h2>Perfil</h2>
-    <p class="summary">Ingeniero en Informática con experiencia en el desarrollo de soluciones de software innovadoras para mejorar la productividad empresarial. Especializada en arquitecturas de microservicios con Java y Spring Boot. Líder práctica y competente, coordinando equipos multidisciplinarios en entornos acelerados para lograr proyectos oportunos y exitosos.</p>
+    <p class="summary">Ingeniera en Informática con experiencia en el desarrollo de soluciones de software innovadoras para mejorar la productividad empresarial. Líder técnica de equipos multidisciplinarios, especializada en arquitecturas de microservicios con Java y Spring Boot.</p>
   </section>
 
   <section class="section">
@@ -401,13 +413,13 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
 
     <div class="entry">
       <div class="entry-head">
-        <h3 class="entry-title">Ingeniero de Software <span class="org">— Xetux Soluciones</span></h3>
+        <h3 class="entry-title">Ingeniera de Software <span class="org">— Xetux Soluciones</span></h3>
         <span class="entry-when">feb. 2025 – Presente</span>
       </div>
       <p class="entry-where">Caracas, Venezuela</p>
       <ul>
-        <li>Diseño y desarrollo de arquitecturas ágiles de microservicios con el ecosistema Java y Spring Boot, aplicando principios SOLID y patrones de diseño para garantizar escalabilidad, mantenibilidad y robustez del backend.</li>
-        <li>Implementación de una arquitectura de microservicios que mejoró la modularidad y el tiempo de respuesta de los sistemas críticos de la empresa.</li>
+        <li>Liderazgo técnico y desarrollo de un autoservicio (kiosk) multimarca en Kotlin para restaurantes, ya en producción.</li>
+        <li>Diseño e implementación de microservicios con Java y Spring Boot (SOLID, patrones de diseño), mejorando la modularidad y el tiempo de respuesta de sistemas críticos.</li>
         <li>Administración y configuración de servidores para el despliegue en entornos productivos, reduciendo costos operativos y tiempos de inactividad.</li>
         <li>Liderazgo técnico de equipos de desarrollo en metodologías ágiles y estandarización de procesos de ingeniería que elevó la calidad del código del equipo.</li>
       </ul>
@@ -415,7 +427,7 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
 
     <div class="entry">
       <div class="entry-head">
-        <h3 class="entry-title">Arquitecto de Soluciones TI <span class="org">— Banco Exterior</span></h3>
+        <h3 class="entry-title">Arquitecta de Soluciones TI <span class="org">— Banco Exterior</span></h3>
         <span class="entry-when">mar. 2024 – feb. 2025</span>
       </div>
       <p class="entry-where">Caracas, Venezuela</p>
@@ -428,7 +440,7 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
 
     <div class="entry">
       <div class="entry-head">
-        <h3 class="entry-title">Ingeniero de Software Júnior <span class="org">— Keep Typing C.A.</span></h3>
+        <h3 class="entry-title">Ingeniera de Software Júnior <span class="org">— Keep Typing C.A.</span></h3>
         <span class="entry-when">ago. 2023 – feb. 2024</span>
       </div>
       <p class="entry-where">Caracas, Venezuela</p>
@@ -437,34 +449,39 @@ body[data-variant="margen"] .entry li::marker{color:var(--muted);}
         <li>Implementación de diseño responsivo y refactorización de código, mejorando la escalabilidad del front-end para soportar mayor tráfico de usuarios.</li>
       </ul>
     </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">Ingeniera de Software Júnior <span class="org">— Apps2Go TECH</span></h3>
+        <span class="entry-when">nov. 2022 – ago. 2023</span>
+      </div>
+      <p class="entry-where">Miami, Florida, EE. UU.</p>
+      <ul>
+        <li>Diseño de interfaces en Figma y desarrollo con Flutter, Python y Node.js, optimizando el rendimiento de funciones críticas.</li>
+      </ul>
+    </div>
   </section>
 
   <section class="section">
     <h2>Competencias técnicas</h2>
-    <dl class="rows">
-      <dt>Backend</dt>
-      <dd>Java, Spring Boot, Kotlin, Node.js, Python, microservicios, API REST, Swagger / OpenAPI, SOLID, patrones de diseño</dd>
-      <dt>Front-end y móvil</dt>
-      <dd>TypeScript, Vue, Vuetify, React, Flutter, desarrollo Android</dd>
-      <dt>Infraestructura</dt>
-      <dd>Docker, DevOps, administración de servidores, automatización de pruebas, RPA</dd>
-      <dt>Producto</dt>
-      <dd>Metodologías ágiles, liderazgo técnico, UX/UI, Figma</dd>
-    </dl>
+    <div class="skills">
+      <p><span class="skill-label">Backend:</span> Java, Spring Boot, Kotlin, Node.js, Python, microservicios, API REST, Swagger / OpenAPI, SOLID, patrones de diseño</p>
+      <p><span class="skill-label">Front-end y móvil:</span> TypeScript, Vue, Vuetify, React, Flutter, desarrollo Android</p>
+      <p><span class="skill-label">Infraestructura:</span> Docker, DevOps, administración de servidores, automatización de pruebas, RPA</p>
+      <p><span class="skill-label">Producto:</span> Metodologías ágiles, liderazgo técnico, UX/UI, Figma</p>
+    </div>
   </section>
 
   <section class="section">
     <h2>Educación</h2>
     <div class="entry">
       <div class="entry-head">
-        <h3 class="entry-title">Maestría en Ingeniería de Software y Sistemas de la Información <span class="org">— TECH Universidad</span></h3>
-        <span class="entry-when">mar. 2025 – nov. 2026 (en curso)</span>
+        <h3 class="entry-title">Maestría en Ingeniería de Software y Sistemas de la Información <span class="org">— TECH Universidad</span> <span class="entry-when">· mar. 2025 – nov. 2026 (en curso)</span></h3>
       </div>
     </div>
     <div class="entry">
       <div class="entry-head">
-        <h3 class="entry-title">Grado en Ingeniería, Computer Science <span class="org">— Universidad «Alejandro de Humboldt»</span></h3>
-        <span class="entry-when">sept. 2019 – abr. 2023</span>
+        <h3 class="entry-title">Ingeniería en Informática <span class="org">— Universidad «Alejandro de Humboldt»</span> <span class="entry-when">· sept. 2019 – abr. 2023</span></h3>
       </div>
     </div>
   </section>
